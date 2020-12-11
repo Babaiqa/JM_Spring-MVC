@@ -12,7 +12,7 @@ public class CarsConrtoller {
     @GetMapping(value = "/cars")
     public String method(@RequestParam(value = "count", required = false) Integer count, Model model) {
 
-        System.out.println(model.addAttribute("cars", Service.selectCars(count)));
+        model.addAttribute("cars", Service.selectCars(count));
 
         return "/cars";
     }

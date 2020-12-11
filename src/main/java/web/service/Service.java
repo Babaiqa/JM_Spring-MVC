@@ -24,10 +24,8 @@ public class Service {
     }
 
     public static List<Car> selectCars(Integer ammount) {
-        if (ammount == null) {
-            ammount = 5;
-        }
+
         createCars();
-        return (ammount <= carsList.size() - 1) ? carsList.subList(0, ammount) : carsList;
+        return ((ammount != null) && (ammount <= carsList.size() - 1)) ? carsList.subList(0, ammount) : carsList;
     }
 }
